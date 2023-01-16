@@ -38,6 +38,10 @@ import quippers
 quippers.add_in_rust(1, 2)
 ```
 
+### Notes
+- Design should minimize the number of times data is passed back and forth between the two languages
+- Type conversions are handled by PyO3 (?) https://pyo3.rs/v0.16.4/conversions/tables.html?
+
 ## Resources
 - https://github.com/PyO3/pyo3
 - https://www.maturin.rs/project_layout.html
