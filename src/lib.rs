@@ -1,13 +1,13 @@
-//src/lib.rs
+// //src/lib.rs
 
-// get the basic module
+pub mod basic_functions;
 use crate::basic_functions::*;
+use pyo3::prelude::*;
 
-// use pyo3::prelude::*;
-
-// #[pymodule]
-// fn quippers(_py: Python, m: &PyModule) -> PyResult<()> {
-//     // m.add_function(wrap_pyfunction!(basic_string::concat_strings, m)?)?;
-//     // py::bind_functions!(m, basic_math::add_in_rust, basic_math::subtract_in_rust);
-//     Ok(())
-// }
+#[pymodule]
+fn quippers(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(basic_string::concat_in_rust, m)?)?;
+    m.add_function(wrap_pyfunction!(basic_math::add_in_rust, m)?)?;
+    m.add_function(wrap_pyfunction!(basic_math::subtract_in_rust, m)?)?;
+    Ok(())
+}
