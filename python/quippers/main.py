@@ -5,3 +5,5 @@ if __name__ == "__main__":
     assert quippers.add_in_rust(1, 2) == 3
     assert quippers.subtract_in_rust(5, 2) == 3
     print("Success!")
+
+    quippers.eigenvalues()
